@@ -1,0 +1,23 @@
+  
+{% extends "base_generic.html" %}
+ 
+
+{% block content %}
+<div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h1 class="p-3 mb-2 bg-info text-white"> {{ assignment.title }}</h1>
+    
+    <p><strong class="text-monospace">Unit:</strong> <a class="text-info" href="{% url 'unit-detail' assignment.unit.pk %}">{{ assignment.unit }}</a></p>
+<p><strong class="text-monospace">Content:</strong> {{ assignment.content }}</p>
+ 
+<p ><strong class="text-monospace">Nature:</strong> {{ assignment.nature.all|join:", " }}</p>
+
+
+<p><strong class="text-monospace">Due Date:</strong> {{ assignment.due_date }}</p>
+ </div>
+</div>
+
+
+{% endblock %}

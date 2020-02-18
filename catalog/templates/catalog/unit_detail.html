@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h1 class="p-3 mb-2 bg-info text-white"> {{ unit.name}}</h1>
+
+ <ul>
+  {% for work in unit.assignment_set.all%}
+  
+  	<li ><a class="text-info" href="{% url 'assignment-detail' work.pk %} ">{{work.title}}</a>
+  	( {{work.due_date}}) </li>
+  {% endfor %}
+  </ul>
+</div>
+</div>
+{% endblock %}

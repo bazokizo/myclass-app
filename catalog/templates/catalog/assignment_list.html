@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+
+
+
+{% block content %}
+     <div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h1 class="p-3 mb-2 bg-info text-white">Assignment List</h1>
+
+   {% if assignment_list %}
+  <ul>
+    {% for assignment in assignment_list %}
+    
+   <li>
+        <a class="text-info" href="{{ assignment.get_absolute_url }}">{{ assignment.title }}</a> 
+        ( {{assignment.due_date}})
+        
+      </li>
+
+     
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}      
+   
+  
+    
+    
+  
+  </div>
+</div>
+{% endblock %}
