@@ -6,7 +6,7 @@ from catalog.models import Nature, Assignment, Unit
 
 class AssignmentListView(generic.ListView):
     model = Assignment
-    queryset = Assignment.objects.order_by('due_date')
+    queryset = Assignment.objects.order_by('-due_date')
 
 class UnitListView(generic.ListView):
     model = Unit
